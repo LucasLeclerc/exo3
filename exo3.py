@@ -10,6 +10,7 @@ def OperationSigne(operation:str):
         return 'multiplication'
     if operation == '/':
         return 'division'
+    return 'error'
 def calcule(val1:int, val2:int, operation:str):
     if operation == '+':
         return val1 + val2
@@ -21,7 +22,10 @@ def calcule(val1:int, val2:int, operation:str):
         if val2==0:
             return 'error'
         return val1 / val2
+    return 'error'
 def operation(listValue:list[int],signe:str):
+    if signe!='+' and signe!='-' and signe!='*' and signe!='/':
+        return'error'
     result=[]
     result.append(listValue[0])
     for i in range(len(listValue)-1):

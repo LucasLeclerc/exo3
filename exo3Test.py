@@ -13,16 +13,10 @@ class TestExo3(unittest.TestCase):
     def test_division(self):
         self.assertEqual(calcule(4,0,'/'), 'error')
 
-    def test_isupper(self):
-        self.assertTrue('FOO'.isupper())
-        self.assertFalse('Foo'.isupper())
-
-    def test_split(self):
-        s = 'hello world'
-        self.assertEqual(s.split(), ['hello', 'world'])
-        # check that s.split fails when the separator is not a string
-        with self.assertRaises(TypeError):
-            s.split(2)
+    def test_operation(self):
+        list=[1,2,3,4]
+        result=[1,3,6,10]
+        self.assertEqual(operation(list,'+'),result)
 
 
 if __name__ == '__main__':
